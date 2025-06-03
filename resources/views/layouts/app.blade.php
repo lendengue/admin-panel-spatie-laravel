@@ -5,8 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>@yield('title', 'Laravel App')</title>
 
-    <!-- Link to external CSS -->
-     <link rel="stylesheet" href="{{asset('css/login.css')}}" />
+    <!-- General CSS -->
+    <link rel="stylesheet" href="" />
+
+    <!-- Page-specific CSS -->
+    @yield('styles')
 </head>
 <body>
     @yield('content')

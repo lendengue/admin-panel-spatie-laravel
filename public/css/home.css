@@ -1,0 +1,115 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body, html {
+    height: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+}
+
+/* Container geral: menu lateral + conteúdo */
+.app-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Menu lateral */
+.sidebar {
+    width: 240px;
+    background-color: #03506f; /* azul petróleo */
+    color: #e0f0f3;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.sidebar a {
+    color: #c5d9dc;
+    text-decoration: none;
+    padding: 12px 20px;
+    display: block;
+    font-weight: 600;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s ease;
+}
+
+.sidebar a:hover {
+    background-color: #0a748b;
+    color: #e0f0f3;
+}
+
+/* Dropdown container */
+.dropdown {
+    position: relative;
+}
+
+.dropdown > a {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Submenu */
+.submenu {
+    background-color: #023e58;
+    display: none;
+    flex-direction: column;
+}
+
+.submenu a {
+    padding-left: 40px;
+    font-weight: 400;
+    font-size: 0.9rem;
+}
+
+/* Quando dropdown estiver ativo mostra submenu */
+.dropdown.active .submenu {
+    display: flex;
+}
+
+/* Ícone de seta simples */
+.dropdown > a .arrow {
+    border: solid #c5d9dc;
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-left: 8px;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+}
+
+/* Rotaciona seta para baixo quando ativo */
+.dropdown.active > a .arrow {
+    transform: rotate(135deg);
+}
+
+/* Conteúdo principal: header + main */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header topo */
+header {
+    background-color: #0a748b;
+    color: #e0f0f3;
+    padding: 1rem 2rem;
+    font-weight: 700;
+    font-size: 1.25rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+    user-select: none;
+}
+
+/* Área principal em branco, ocupa o resto */
+main {
+    background-color: #fff;
+    flex-grow: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
